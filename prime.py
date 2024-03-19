@@ -3,9 +3,12 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import pandas as pd
 from sqlalchemy import create_engine, MetaData, Table, inspect
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Set up API credentials
-DEVELOPER_KEY = "AIzaSyBMKMIfvHc94mY5ccrEvdrfsi_hbIpBD2A"
+DEVELOPER_KEY = os.getenv('API_KEY')
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
